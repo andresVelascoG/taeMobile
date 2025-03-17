@@ -1,4 +1,4 @@
-package org.example;
+package com.automation.mobile.base;
 
 /**
  * Hello world!
