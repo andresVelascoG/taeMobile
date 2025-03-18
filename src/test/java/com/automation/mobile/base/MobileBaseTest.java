@@ -2,10 +2,12 @@ package com.automation.mobile.base;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class MobileBaseTest {
 
@@ -14,6 +16,13 @@ public class MobileBaseTest {
     @BeforeMethod
     public void setUp(){
         driver = createAndroidDriver();
+    }
+
+    @AfterMethod
+    public void teardown(){
+        if(driver != null){
+            driver.quit();
+        }
     }
 
     private AndroidDriver createAndroidDriver(){
@@ -29,7 +38,7 @@ public class MobileBaseTest {
             //.setAppActivity("");
 
             AndroidDriver androidDriver = new AndroidDriver(url, options);
-
+            androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             return androidDriver;
 
         }catch (MalformedURLException e){
@@ -38,5 +47,6 @@ public class MobileBaseTest {
         }
 
     }
+
 
 }
