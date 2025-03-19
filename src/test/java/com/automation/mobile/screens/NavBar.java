@@ -14,7 +14,7 @@ public class NavBar extends MobileBaseScreen {
     @AndroidFindBy(accessibility = "Login")
     private WebElement btnLogin;
     @AndroidFindBy(accessibility = "Forms")
-    private WebElement btnforms;
+    private WebElement btnForms;
     @AndroidFindBy(accessibility = "Swipe")
     private WebElement btnSwipe;
     @AndroidFindBy(accessibility = "Drag")
@@ -27,6 +27,31 @@ public class NavBar extends MobileBaseScreen {
     public HomeScreen navigateHome(){
         btnHome.click();
         return new HomeScreen(driver);
+    }
+
+    public WebviewScreen navigateWebview() {
+        btnWebview.click();
+        return new WebviewScreen(driver);
+    }
+
+    public LoginScreen navigateLogin() {
+        btnLogin.click();
+        return new LoginScreen(driver);
+    }
+
+    public FormsScreen navigateForms() {
+        btnForms.click();
+        return new FormsScreen(driver);
+    }
+
+    public SwipeScreen navigateSwipe() {
+        btnSwipe.click();
+        return new SwipeScreen(driver);
+    }
+
+    public DragScreen navigateDrag() {
+        btnDrag.click();
+        return new DragScreen(driver);
     }
 
 }

@@ -3,7 +3,10 @@
 <suite name="Suite1" verbose="1">
     <test name="Nopackage">
         <classes>
-            <class name="NoPackageTest"/>
+            <class name="com.automation.mobile.tests.LoginTest"/>
+            <class name="com.automation.mobile.tests.NavigationTest"/>
+            <class name="com.automation.mobile.tests.SignInTest"/>
+            <class name="com.automation.mobile.tests.SwipeTest"/>
         </classes>
     </test>
 </suite>
